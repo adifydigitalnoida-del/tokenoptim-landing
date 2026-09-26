@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TokenOptim - Save 30-50% on AI API Costs</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#fff}
+        nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid #f0f0f0}
+        .logo{font-size:24px;font-weight:700}
+        nav ul{display:flex;list-style:none;gap:40px}
+        nav a{text-decoration:none;color:#666;font-size:14px;transition:color 0.3s}
+        nav a:hover{color:#000}
+        .btn-install{background:#000;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-size:14px}
+        .hero{max-width:1200px;margin:0 auto;padding:100px 40px;text-align:center}
+        .hero h1{font-size:56px;font-weight:700;margin-bottom:20px}
+        .hero p{font-size:20px;color:#666;margin-bottom:40px}
+        .hero-buttons{display:flex;gap:20px;justify-content:center}
+        .btn-primary{background:#000;color:#fff;padding:16px 32px;border-radius:8px;text-decoration:none;font-weight:600}
+        .btn-secondary{background:#f0f0f0;color:#000;padding:16px 32px;border-radius:8px;text-decoration:none;font-weight:600}
+        .problem{background:#f9f9f9;padding:80px 40px}
+        .problem-content{max-width:1200px;margin:0 auto}
+        .problem h2{font-size:42px;margin-bottom:40px;text-align:center}
+        .cost-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin:40px 0}
+        .cost-card{background:#fff;padding:30px;border-radius:8px;border:1px solid #f0f0f0}
+        .cost-card .price{font-size:32px;font-weight:700}
+        .solution{padding:80px 40px}
+        .solution-content{max-width:1200px;margin:0 auto}
+        .solution h2{font-size:42px;margin-bottom:40px;text-align:center}
+        .routing-table{width:100%;margin:40px 0;border-collapse:collapse}
+        .routing-table th,.routing-table td{padding:15px;text-align:left;border-bottom:1px solid #f0f0f0}
+        .routing-table th{background:#f9f9f9;font-weight:600}
+        .routing-table .savings{color:#22c55e;font-weight:600}
+        .features{background:#f9f9f9;padding:80px 40px}
+        .features-content{max-width:1200px;margin:0 auto}
+        .features h2{font-size:42px;margin-bottom:40px;text-align:center}
+        .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
+        .feature-item{background:#fff;padding:30px;border-radius:8px;border:1px solid #f0f0f0}
+        .stats{padding:80px 40px;background:#000;color:#fff}
+        .stats-content{max-width:1200px;margin:0 auto}
+        .stats h2{font-size:42px;margin-bottom:40px;text-align:center}
+        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
+        .stat-item h3{font-size:36px;font-weight:700;margin-bottom:10px}
+        .cta{padding:80px 40px;text-align:center}
+        .cta-content{max-width:600px;margin:0 auto}
+        .cta h2{font-size:42px;margin-bottom:20px}
+        footer{background:#000;color:#fff;padding:40px;text-align:center;border-top:1px solid #333}
+        footer a{color:#aaa;text-decoration:none;margin:0 20px;font-size:14px}
+        @media (max-width:768px){.hero h1{font-size:36px}.cost-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">TokenOptim</div>
+        <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="https://github.com/adifydigitalnoida-del/tokenoptim" target="_blank">GitHub</a></li>
+        </ul>
+        <a href="https://chrome.google.com/webstore" class="btn-install">Install</a>
+    </nav>
+
+    <section class="hero">
+        <h1>Save 30-50% on AI API Costs</h1>
+        <p>TokenOptim automatically routes to the cheapest AI model that maintains quality.</p>
+        <div class="hero-buttons">
+            <a href="https://chrome.google.com/webstore" class="btn-primary">Install Now</a>
+            <a href="https://github.com/adifydigitalnoida-del/tokenoptim" class="btn-secondary">GitHub</a>
+        </div>
+    </section>
+
+    <section class="problem">
+        <div class="problem-content">
+            <h2>The Problem: Overpaying for AI</h2>
+            <div class="cost-grid">
+                <div class="cost-card">
+                    <h3>Claude</h3>
+                    <div class="price">$3.00</div>
+                    <div style="color:#666;font-size:14px;">per 1M tokens</div>
+                </div>
+                <div class="cost-card">
+                    <h3>ChatGPT</h3>
+                    <div class="price">$5.00</div>
+                    <div style="color:#666;font-size:14px;">per 1M tokens</div>
+                </div>
+                <div class="cost-card">
+                    <h3>Gemini</h3>
+                    <div class="price">$0.075</div>
+                    <div style="color:#666;font-size:14px;">per 1M tokens</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution">
+        <div class="solution-content">
+            <h2>The Solution: Automatic Routing</h2>
+            <table class="routing-table">
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Best Model</th>
+                        <th>Savings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Summarization</td>
+                        <td>Gemini</td>
+                        <td class="savings">97.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Extraction</td>
+                        <td>Gemini</td>
+                        <td class="savings">97.5%</td>
+                    </tr>
+                    <tr>
+                        <td>Writing</td>
+                        <td>ChatGPT</td>
+                        <td class="savings">40%</td>
+                    </tr>
+                    <tr>
+                        <td>Coding</td>
+                        <td>Claude</td>
+                        <td class="savings">0%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="features-content">
+            <h2>Built for Developers</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3>✅ Token Counter</h3>
+                    <p>See exactly how many tokens you're using.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✅ Semantic Caching</h3>
+                    <p>60-90% additional savings on repeated tasks.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✅ Cost Dashboard</h3>
+                    <p>Beautiful breakdown of spending.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✅ Auto-Optimizer</h3>
+                    <p>Automatically route to cheapest model.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✅ Budget Alerts</h3>
+                    <p>Get notified before you hit limits.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>✅ Privacy First</h3>
+                    <p>Your API keys stay local. Zero data collection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-content">
+            <h2>Trusted by Developers</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Active users</p>
+                </div>
+                <div class="stat-item">
+                    <h3>$347</h3>
+                    <p>Avg savings/month</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8.7/10</h3>
+                    <p>User rating</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Free forever</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Start Saving Today</h2>
+            <p>Install TokenOptim in 30 seconds.</p>
+            <a href="https://chrome.google.com/webstore" class="btn-primary">Install TokenOptim</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>TokenOptim • Save 30-50% on AI API costs automatically</p>
+        <div style="margin:20px 0;">
+            <a href="https://github.com/adifydigitalnoida-del/tokenoptim">GitHub</a>
+            <a href="https://github.com/adifydigitalnoida-del/tokenoptim/discussions">Community</a>
+            <a href="https://twitter.com/tokenoptim">Twitter</a>
+        </div>
+        <p style="margin-top:20px;color:#666;font-size:12px;">© 2026 TokenOptim. MIT license.</p>
+    </footer>
+</body>
+</html>

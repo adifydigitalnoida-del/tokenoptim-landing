@@ -1,0 +1,5 @@
+{
+  "name": "tokenoptim",
+  "buildCommand": "echo 'static'",
+  "outputDirectory": "."
+}
