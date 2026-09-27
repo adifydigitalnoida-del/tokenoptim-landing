@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install TokenOptim on Desktop | Chrome Extension</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #050505 0%, #1a0033 50%, #050505 100%);
+      color: #fff;
+      line-height: 1.8;
+      padding: 2rem;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 2.5rem; color: #00d9ff; margin-bottom: 1rem; }
+    h2 { font-size: 1.8rem; color: #00d9ff; margin: 2rem 0 1rem; }
+    p, li { color: #b0b0b0; margin: 1rem 0; }
+    .step {
+      background: #0f0f0f;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .step-number {
+      display: inline-block;
+      background: #00d9ff;
+      color: #000;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 32px;
+      font-weight: 600;
+      margin-right: 1rem;
+    }
+    .step h3 {
+      display: inline-block;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+    code {
+      background: #000;
+      padding: 2px 6px;
+      border-radius: 3px;
+      color: #00ff88;
+      font-family: monospace;
+    }
+    .btn {
+      display: inline-block;
+      background: #00d9ff;
+      color: #000;
+      padding: 1rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: all 0.3s;
+    }
+    .btn:hover {
+      background: #0099cc;
+      transform: translateY(-2px);
+    }
+    .back-link { margin-bottom: 2rem; }
+    .back-link a { color: #00d9ff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="back-link">
+      <a href="/">← Back to TokenOptim</a>
+    </div>
+
+    <h1>🖥️ Install TokenOptim on Desktop</h1>
+    <p>Load TokenOptim as a Chrome extension in developer mode (2 minutes)</p>
+
+    <div class="step">
+      <span class="step-number">1</span>
+      <h3>Clone the Repository</h3>
+      <p>Get the code from GitHub:</p>
+      <code>git clone https://github.com/adifydigitalnoida-del/tokenoptim</code>
+      <p>Or download as ZIP and extract it.</p>
+    </div>
+
+    <div class="step">
+      <span class="step-number">2</span>
+      <h3>Open Chrome Extensions</h3>
+      <p>Go to: <code>chrome://extensions/</code></p>
+      <p>Or: Chrome menu → Settings → Extensions</p>
+    </div>
+
+    <div class="step">
+      <span class="step-number">3</span>
+      <h3>Enable Developer Mode</h3>
+      <p>Toggle "Developer mode" in the top right corner</p>
+    </div>
+
+    <div class="step">
+      <span class="step-number">4</span>
+      <h3>Load Unpacked</h3>
+      <p>Click "Load unpacked"</p>
+      <p>Select the <code>tokenoptim</code> folder (where you cloned/extracted it)</p>
+    </div>
+
+    <div class="step">
+      <span class="step-number">5</span>
+      <h3>Done! 🎉</h3>
+      <p>TokenOptim icon appears in your Chrome toolbar (top right)</p>
+      <p>Click it to open the popup</p>
+    </div>
+
+    <h2>First Use</h2>
+    <ol>
+      <li>Click the TokenOptim icon in your toolbar</li>
+      <li>See the "Quick Counter" section at the top</li>
+      <li>Paste any text and click "Count Tokens"</li>
+      <li>See token count + estimated cost instantly</li>
+    </ol>
+
+    <h2>Troubleshooting</h2>
+    <p><strong>Extension won't load?</strong></p>
+    <ul>
+      <li>Check that the folder contains <code>manifest.json</code></li>
+      <li>Make sure <code>icons/</code> folder exists with PNG files</li>
+      <li>Refresh the page or toggle Developer Mode on/off</li>
+    </ul>
+
+    <p><strong>No token count showing?</strong></p>
+    <ul>
+      <li>Use the Quick Counter (paste text into popup)</li>
+      <li>Page-level integration coming in v3.2</li>
+    </ul>
+
+    <h2>Next Steps</h2>
+    <p>Now that it's installed:</p>
+    <ol>
+      <li>Test the Quick Counter with a sample prompt</li>
+      <li>Go to Claude.ai or ChatGPT</li>
+      <li>Use TokenOptim to count tokens before sending</li>
+      <li>See your cost savings in the stats dashboard</li>
+    </ol>
+
+    <p style="margin-top: 2rem; text-align: center;">
+      <a href="/" class="btn">← Back to TokenOptim</a>
+    </p>
+  </div>
+</body>
+</html>

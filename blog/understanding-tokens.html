@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Understanding AI Tokens: The Hidden Cost of Your Prompts">
+  <title>Understanding AI Tokens: The Hidden Cost of Your Prompts | TokenOptim Blog</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #050505;
+      color: #fff;
+      line-height: 1.8;
+      padding: 2rem;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1, h2, h3 { margin: 1.5rem 0 0.5rem; color: #00d9ff; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    p { margin: 1rem 0; color: #b0b0b0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; color: #00ff88; }
+    pre { background: #0a0a0a; padding: 1rem; border-radius: 6px; overflow-x: auto; margin: 1rem 0; }
+    a { color: #00d9ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { margin: 1rem 0 1rem 2rem; }
+    li { margin: 0.5rem 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #00d9ff; }
+    .back-link { margin-bottom: 2rem; }
+    .back-link a { font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="back-link">
+      <a href="/">← Back to TokenOptim</a>
+    </div>
+    <article>
+      <p><h1>Understanding AI Tokens: The Hidden Cost of Your Prompts</h1></p><p><strong>Meta:</strong> Keywords: token usage, Claude tokens, ChatGPT tokens, AI API costs, prompt compression<br><strong>Slug:</strong> <code>/blog/understanding-tokens</code><br><strong>Read time:</strong> 6 min</p><p><h2>Why tokens matter</h2></p><p>Every API call to Claude, ChatGPT, Gemini, or any LLM costs money. But you're not charged per <em>word</em>—you're charged per <strong>token</strong>.</p><p>One token ≈ 4 characters. But it's not that simple.</p><p>A single "hello" = 1 token. But "Hello!" = 2 tokens. A newline? Maybe 1. A code block? Potentially 10+ tokens per line.</p><p><strong>The problem:</strong> Without seeing token counts in real-time, you're flying blind. You might write a 2,000-word prompt thinking it costs $0.02, only to get billed $0.15.</p><p>And if you're a team running 100 prompts/day? That's easily <strong>$5,000–15,000/month</strong> in wasted tokens.</p><p><h2>How tokens work</h2></p><p><h3>Text tokenization</h3><br>Each LLM breaks text into chunks (tokens) using its own tokenizer:<br><ul><li><strong>Claude:</strong> Uses a custom tokenizer (slightly fewer tokens than GPT-4)</li></ul><br><li><strong>ChatGPT (GPT-4):</strong> Uses the cl100k_base tokenizer</li><br><li><strong>Gemini:</strong> Uses SentencePiece tokenization</li></p><p>The same sentence in Claude costs 12 tokens but 14 in ChatGPT.</p><p><h3>Code is token-heavy</h3><br>Code tokens way more than prose. A function signature can cost 15–20 tokens, and a loop adds another 10. That's why pasting entire codebases into AI is expensive.</p><p><h3>System prompts add up</h3><br>That 500-word system prompt? <strong>200–250 tokens per request.</strong> If you run 100 prompts, that's 20,000+ tokens just on instructions.</p><p><h2>Real-world example</h2></p><p><strong>The prompt:</strong><br><pre><code><br>You are an expert Ruby developer. Optimize this code for performance.</p><p>def calculate_total(items)<br>  total = 0<br>  items.each do |item|<br>    total += item[:price] * item[:quantity]<br>  end<br>  total<br>end</p><p>Your response should include:<br>1. The optimized code<br>2. 3 specific optimizations<br>3. Benchmarks if possible<br></code></pre></p><p><strong>Token breakdown (Claude):</strong><br><li>System prompt: 45 tokens</li><br><li>User prompt: 89 tokens</li><br><li><strong>Total input: 134 tokens</strong></li></p><p>At Claude's Opus rate ($0.015 per 1K input tokens):<br><li><strong>Cost: $0.002 per request</strong></li></p><p>But run this 50 times/day:<br><li><strong>$0.10/day = $3/month per person</strong></li><br><li>Scale to 10 people: <strong>$30/month</strong></li><br><li>100 people: <strong>$300/month</strong> (and you never tracked it)</li></p><p><h2>How to reduce token usage</h2></p><p><h3>1. Compress your prompts</h3><br>Instead of:<br><pre><code><br>I am a Python expert. I specialize in data science and machine learning.<br>I have 10 years of experience writing production code. Please help me write<br>a function that reads a CSV file and returns the top 10 rows sorted by <br>the "age" column in descending order.<br></code></pre></p><p>Write:<br><pre><code><br>Expert Python dev. Write a function to read CSV, return top 10 rows sorted by age (desc).<br></code></pre></p><p><strong>Saves:</strong> ~40 tokens per prompt</p><p><h3>2. Reuse system prompts</h3><br>Create 3–5 core system prompts (writer, coder, analyst) instead of 20 unique ones. Store them server-side; don't re-send every request.</p><p><h3>3. Batch requests</h3><br>If you can combine 3 small prompts into 1 larger one, do it. The overhead is lower.</p><p><h3>4. Use semantic caching</h3><br>If you ask the same question twice (e.g., "Summarize this doc"), the LLM remembers and charges 10% for the cached portion.</p><p><strong>Claude's semantic caching saves 90% on cached tokens.</strong> ChatGPT doesn't support it yet.</p><p><h2>Token counting tools</h2></p><p>Manually counting is slow. Use automated tools:<br><li><strong>TokenOptim:</strong> Real-time counter + compression suggestions (free Chrome extension)</li><br><li><strong>OpenAI tokenizer:</strong> CLI tool (ChatGPT only)</li><br><li><strong>Anthropic tokenizer:</strong> Python library (Claude only)</li><br><li><strong>Gemini tokenizer:</strong> Web dashboard (Gemini only)</li></p><p><h2>Key takeaway</h2></p><p>Token usage is the <strong>hidden variable</strong> in your AI budget. A 10% reduction in tokens = <strong>$5,000–10,000/year savings</strong> per person.</p><p>Track it. Compress relentlessly. Use caching. Watch your AI costs plummet.</p><p>---</p><p><strong>Next read:</strong> <a href="/blog/token-compression">The Ultimate Token Compression Guide</a><br></p>
+    </article>
+    <div class="back-link" style="margin-top: 3rem; text-align: center; color: #666; font-size: 0.9rem;">
+      <p>Read more at <a href="https://tokenoptim.vercel.app">TokenOptim.vercel.app</a></p>
+    </div>
+  </div>
+</body>
+</html>

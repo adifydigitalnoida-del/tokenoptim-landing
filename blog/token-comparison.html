@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Token Usage Across AI Models: Claude vs ChatGPT vs Gemini vs Grok">
+  <title>Token Usage Across AI Models: Claude vs ChatGPT vs Gemini vs Grok | TokenOptim Blog</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #050505;
+      color: #fff;
+      line-height: 1.8;
+      padding: 2rem;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1, h2, h3 { margin: 1.5rem 0 0.5rem; color: #00d9ff; }
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    p { margin: 1rem 0; color: #b0b0b0; }
+    code { background: #1a1a1a; padding: 2px 6px; border-radius: 3px; color: #00ff88; }
+    pre { background: #0a0a0a; padding: 1rem; border-radius: 6px; overflow-x: auto; margin: 1rem 0; }
+    a { color: #00d9ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    ul { margin: 1rem 0 1rem 2rem; }
+    li { margin: 0.5rem 0; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #222; }
+    th { background: #1a1a1a; color: #00d9ff; }
+    .back-link { margin-bottom: 2rem; }
+    .back-link a { font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="back-link">
+      <a href="/">← Back to TokenOptim</a>
+    </div>
+    <article>
+      <p><h1>Token Usage Across AI Models: Claude vs ChatGPT vs Gemini vs Grok</h1></p><p><strong>Meta:</strong> Keywords: Claude vs ChatGPT, token costs comparison, API pricing, Gemini tokens, Grok tokens, cheapest AI API<br><strong>Slug:</strong> <code>/blog/token-comparison</code><br><strong>Read time:</strong> 7 min</p><p><h2>The big picture</h2></p><p>You write the same prompt to Claude, ChatGPT, Gemini, and Grok. Same words. Different token counts.</p><p>Why? Each model uses a different tokenizer.</p><p><strong>Result:</strong> Your "10 token" prompt might cost 8 tokens on Claude but 12 on GPT-4. Multiply that across thousands of requests, and it's <strong>significant.</strong></p><p><h2>Side-by-side tokenization</h2></p><p><strong>Prompt:</strong> "Write a Python function to reverse a string."</p><p>| Model | Tokens | Cost @ standard rate |<br>|-------|--------|----------------------|<br>| Claude 3.5 Sonnet | 11 | $0.00016 |<br>| ChatGPT-4o | 13 | $0.00013 |<br>| Gemini 2.0 | 12 | $0.00024 |<br>| Grok-2 | 10 | $0.00050 |<br>| Kimi (Moonshot) | 11 | $0.00044 |<br>| GLM-4 (Alibaba) | 12 | $0.00018 |</p><p><strong>Winner by tokens:</strong> Grok (but most expensive per token)<br><strong>Winner by price:</strong> Claude (tokens + low cost)</p><p><h2>Pricing breakdown (as of Sept 2026)</h2></p><p><h3>Input pricing (per 1M tokens)</h3></p><p>| Model | Standard | Notes |<br>|-------|----------|-------|<br>| <strong>Claude 3.5 Sonnet</strong> | $3 | Fastest. 200K context. Semantic caching. |<br>| <strong>Claude 3 Opus</strong> | $15 | Most intelligent. 200K context. |<br>| <strong>ChatGPT-4o</strong> | $5 | Good balance. 128K context. |<br>| <strong>ChatGPT-4 Turbo</strong> | $10 | Slower, expensive. |<br>| <strong>Gemini 2.0 Flash</strong> | $20 | Very cheap but lower quality. |<br>| <strong>Grok-2</strong> | $5 | Latest X.com model. 128K context. |<br>| <strong>Kimi (Moonshot)</strong> | $44 | Chinese market. 200K context. |<br>| <strong>GLM-4</strong> | $15 | Alibaba's model. 128K context. |</p><p><h3>Output pricing (per 1M tokens)</h3></p><p>| Model | Standard | Notes |<br>|-------|----------|-------|<br>| <strong>Claude 3.5 Sonnet</strong> | $15 | Same as input for Opus. |<br>| <strong>Claude 3 Opus</strong> | $60 | 4x input cost. |<br>| <strong>ChatGPT-4o</strong> | $15 | Same as Claude output. |<br>| <strong>ChatGPT-4 Turbo</strong> | $30 | 3x input cost. |<br>| <strong>Gemini 2.0 Flash</strong> | $60 | Most expensive output. |<br>| <strong>Grok-2</strong> | $15 | Same as input. |<br>| <strong>Kimi</strong> | $132 | 3x input. Don't use for long outputs. |<br>| <strong>GLM-4</strong> | $45 | Expensive output. |</p><p><h2>Real example: Which model costs least?</h2></p><p><strong>Task:</strong> Summarize a 15-page research paper.</p><p><strong>Inputs:</strong><br><ul><li>System prompt: 150 tokens</li></ul><br><li>Research paper (15 pages): ~8,000 tokens</li><br><li>Summary instruction: 50 tokens</li><br><li><strong>Total input: ~8,200 tokens</strong></li></p><p><strong>Expected output:</strong> ~500 tokens</p><p><h3>Cost per provider:</h3></p><p>| Model | Input cost | Output cost | Total |<br>|-------|-----------|-----------|-------|<br>| Claude 3.5 Sonnet | $0.025 | $0.008 | <strong>$0.033</strong> |<br>| ChatGPT-4o | $0.041 | $0.008 | <strong>$0.049</strong> |<br>| Gemini 2.0 Flash | $0.164 | $0.030 | <strong>$0.194</strong> |<br>| Grok-2 | $0.041 | $0.008 | <strong>$0.049</strong> |<br>| Kimi | $0.361 | $0.066 | <strong>$0.427</strong> |<br>| GLM-4 | $0.123 | $0.023 | <strong>$0.146</strong> |</p><p><strong>Cheapest:</strong> Claude 3.5 Sonnet ($0.033)<br><strong>Most expensive:</strong> Kimi ($0.427) — <strong>13x more expensive</strong></p><p><h3>Scale to 100 requests/month:</h3></p><p>| Model | Monthly cost |<br>|-------|--------------|<br>| Claude Sonnet | $3.30 |<br>| ChatGPT-4o | $4.90 |<br>| Grok-2 | $4.90 |<br>| GLM-4 | $14.60 |<br>| Gemini Flash | $19.40 |<br>| Kimi | $42.70 |</p><p><strong>Annual savings: Claude vs Kimi = $470</strong> (for one task, one person)</p><p><h2>Token efficiency rankings</h2></p><p><strong>Best token efficiency</strong> (fewest tokens for same meaning):<br>1. Claude 3.5 Sonnet — More efficient tokenizer<br>2. Grok-2 — Optimized for X/Twitter content<br>3. ChatGPT-4o — Mature, balanced<br>4. GLM-4 — Acceptable<br>5. Gemini 2.0 Flash — Less efficient<br>6. Kimi — Worst</p><p><h2>Semantic caching: The game changer</h2></p><p>Only Claude currently supports semantic caching. If you repeat the same request:</p><p><strong>First request:</strong><br><li>Input: 8,200 tokens @ $3/1M = $0.025</li></p><p><strong>Second request (same system prompt + research paper):</strong><br><li>Cached portion: 8,150 tokens @ $0.30/1M (90% off) = <strong>$0.002</strong></li><br><li>New portion: 50 tokens @ $3/1M = $0.00015</li><br><li><strong>Total: $0.00215</strong> (91% cheaper)</li></p><p>Over 100 requests with caching:<br><li><strong>Claude: $2.50</strong> (1st request + 99 cached)</li><br><li><strong>ChatGPT: $4.90</strong> (no caching)</li><br><li><strong>Savings: $2.40</strong></li></p><p><h2>When to use each model</h2></p><p><h3>Use Claude 3.5 Sonnet if:</h3><br><li>You need cost-effectiveness + quality</li><br><li>You'll reuse the same prompts (semantic caching)</li><br><li>You have long inputs (200K context window)</li><br><li>You want the fastest inference</li></p><p><h3>Use ChatGPT-4o if:</h3><br><li>You need top-tier reasoning for complex tasks</li><br><li>Your team is already on OpenAI</li><br><li>You need function calling / tool use</li></p><p><h3>Use Gemini 2.0 Flash if:</h3><br><li>Budget is critical (cheapest per token)</li><br><li>Quality can be lower</li><br><li>You're running real-time inference</li></p><p><h3>Use Grok-2 if:</h3><br><li>You need cutting-edge reasoning</li><br><li>X.com integration is a plus</li><br><li>You want competitive pricing</li></p><p><h3>Avoid Kimi if:</h3><br><li>You have long outputs (too expensive)</li><br><li>Budget is a concern (13x more than Claude)</li></p><p><h2>Cost optimization strategy</h2></p><p><strong>Tier 1: Use Claude Sonnet (80% of requests)</strong><br><li>Semantic caching enabled</li><br><li>Batch requests</li><br><li>Template prompts</li></p><p><strong>Tier 2: Use ChatGPT-4o for edge cases (15% of requests)</strong><br><li>Complex reasoning that needs GPT</li><br><li>Tasks requiring function calling</li></p><p><strong>Tier 3: Experiment (5% of requests)</strong><br><li>Try new models (Grok, Gemini)</li><br><li>A/B test quality vs. cost</li></p><p><strong>Result:</strong> 40-50% overall cost savings vs. always using the most expensive model.</p><p><h2>Tools to compare</h2></p><p>1. <strong>TokenOptim</strong> — Compare costs across 6+ models in real-time<br>2. <strong>AI cost calculator</strong> — Manual spreadsheet comparison<br>3. <strong>Langsmith</strong> — Full observability + cost tracking<br>4. <strong>Lithops</strong> — Distributed inference cost estimator</p><p><h2>Bottom line</h2></p><p><strong>Claude 3.5 Sonnet = best value.</strong> Fewest tokens, lowest cost, semantic caching, fastest.</p><p>If you're currently using ChatGPT-4 or Gemini for all tasks, switching to Claude Sonnet for routine work = <strong>$5,000-15,000/year savings per person.</strong></p><p>---</p><p><strong>Next:</strong> <a href="/blog/token-budgeting">Building a Token Budget for Your Team</a><br></p>
+    </article>
+    <div class="back-link" style="margin-top: 3rem; text-align: center; color: #666; font-size: 0.9rem;">
+      <p>Read more at <a href="https://tokenoptim.vercel.app">TokenOptim.vercel.app</a></p>
+    </div>
+  </div>
+</body>
+</html>

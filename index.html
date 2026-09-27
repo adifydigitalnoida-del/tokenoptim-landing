@@ -3,204 +3,618 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TokenOptim - Save 30-50% on AI API Costs</title>
+    <meta name="description" content="TokenOptim: Free Chrome extension to count, compress, and cache AI tokens. Save 30-50% on Claude, ChatGPT, Gemini API costs. Real-time token tracking.">
+    <meta name="keywords" content="token counter, AI API costs, ChatGPT tokens, Claude tokens, prompt compression, semantic caching, cost reduction">
+    <meta name="author" content="TokenOptim">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="TokenOptim: Count & Compress AI Tokens. Save 30-50% on API Costs.">
+    <meta property="og:description" content="Real-time token counter + compression engine for Claude, ChatGPT, Gemini, Grok. Track costs. Get alerts. Save thousands.">
+    <meta property="og:image" content="https://tokenoptim-landing.vercel.app/og-image.png">
+    <meta property="og:url" content="https://tokenoptim-landing.vercel.app">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TokenOptim: Count & Compress AI Tokens">
+    <meta name="twitter:description" content="Free Chrome extension. Save 30-50% on AI API costs.">
+    <meta name="theme-color" content="#050505">
+    <link rel="canonical" href="https://tokenoptim-landing.vercel.app">
+    <title>TokenOptim | Free AI Token Counter & Cost Optimizer</title>
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;color:#1a1a1a;background:#fff}
-        nav{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;border-bottom:1px solid #f0f0f0}
-        .logo{font-size:24px;font-weight:700}
-        nav ul{display:flex;list-style:none;gap:40px}
-        nav a{text-decoration:none;color:#666;font-size:14px;transition:color 0.3s}
-        nav a:hover{color:#000}
-        .btn-install{background:#000;color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-size:14px}
-        .hero{max-width:1200px;margin:0 auto;padding:100px 40px;text-align:center}
-        .hero h1{font-size:56px;font-weight:700;margin-bottom:20px}
-        .hero p{font-size:20px;color:#666;margin-bottom:40px}
-        .hero-buttons{display:flex;gap:20px;justify-content:center}
-        .btn-primary{background:#000;color:#fff;padding:16px 32px;border-radius:8px;text-decoration:none;font-weight:600}
-        .btn-secondary{background:#f0f0f0;color:#000;padding:16px 32px;border-radius:8px;text-decoration:none;font-weight:600}
-        .problem{background:#f9f9f9;padding:80px 40px}
-        .problem-content{max-width:1200px;margin:0 auto}
-        .problem h2{font-size:42px;margin-bottom:40px;text-align:center}
-        .cost-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin:40px 0}
-        .cost-card{background:#fff;padding:30px;border-radius:8px;border:1px solid #f0f0f0}
-        .cost-card .price{font-size:32px;font-weight:700}
-        .solution{padding:80px 40px}
-        .solution-content{max-width:1200px;margin:0 auto}
-        .solution h2{font-size:42px;margin-bottom:40px;text-align:center}
-        .routing-table{width:100%;margin:40px 0;border-collapse:collapse}
-        .routing-table th,.routing-table td{padding:15px;text-align:left;border-bottom:1px solid #f0f0f0}
-        .routing-table th{background:#f9f9f9;font-weight:600}
-        .routing-table .savings{color:#22c55e;font-weight:600}
-        .features{background:#f9f9f9;padding:80px 40px}
-        .features-content{max-width:1200px;margin:0 auto}
-        .features h2{font-size:42px;margin-bottom:40px;text-align:center}
-        .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px}
-        .feature-item{background:#fff;padding:30px;border-radius:8px;border:1px solid #f0f0f0}
-        .stats{padding:80px 40px;background:#000;color:#fff}
-        .stats-content{max-width:1200px;margin:0 auto}
-        .stats h2{font-size:42px;margin-bottom:40px;text-align:center}
-        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;text-align:center}
-        .stat-item h3{font-size:36px;font-weight:700;margin-bottom:10px}
-        .cta{padding:80px 40px;text-align:center}
-        .cta-content{max-width:600px;margin:0 auto}
-        .cta h2{font-size:42px;margin-bottom:20px}
-        footer{background:#000;color:#fff;padding:40px;text-align:center;border-top:1px solid #333}
-        footer a{color:#aaa;text-decoration:none;margin:0 20px;font-size:14px}
-        @media (max-width:768px){.hero h1{font-size:36px}.cost-grid{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:repeat(2,1fr)}}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #050505;
+            --bg-secondary: #0f0f0f;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --accent: #00d9ff;
+            --accent-dark: #0099cc;
+            --danger: #ff3366;
+            --success: #00ff88;
+            --border: #222222;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #1a0033 50%, var(--bg-primary) 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 217, 255, 0.2) 0%, transparent 70%);
+            top: -200px;
+            left: -200px;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 51, 102, 0.15) 0%, transparent 70%);
+            bottom: -300px;
+            right: -200px;
+            animation: float 8s ease-in-out infinite reverse;
+            pointer-events: none;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            background: linear-gradient(90deg, var(--text-primary) 0%, var(--accent) 50%, var(--text-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 217, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Features section */
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(90deg, var(--text-primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 217, 255, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Blog section */
+        .blog-section {
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+            margin-top: 3rem;
+        }
+
+        .blog-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--accent);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+        }
+
+        .blog-tag {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.2);
+            color: var(--accent);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .blog-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Install paths section */
+        .install-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .install-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--accent);
+        }
+
+        .install-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .install-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .install-card h3 {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .install-card .btn {
+            margin-top: 1.5rem;
+        }
+
+        /* Pricing section */
+        .pricing-section {
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .pricing-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--accent);
+        }
+
+        .pricing-highlight {
+            font-size: 3rem;
+            color: var(--success);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-subtext {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent-dark);
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .features h2, .blog-section h2, .install-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Schema markup for SEO */
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">TokenOptim</div>
-        <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="https://github.com/adifydigitalnoida-del/tokenoptim" target="_blank">GitHub</a></li>
-        </ul>
-        <a href="https://chrome.google.com/webstore" class="btn-install">Install</a>
-    </nav>
-
+    <!-- Hero section -->
     <section class="hero">
-        <h1>Save 30-50% on AI API Costs</h1>
-        <p>TokenOptim automatically routes to the cheapest AI model that maintains quality.</p>
-        <div class="hero-buttons">
-            <a href="https://chrome.google.com/webstore" class="btn-primary">Install Now</a>
-            <a href="https://github.com/adifydigitalnoida-del/tokenoptim" class="btn-secondary">GitHub</a>
+        <div class="hero-content">
+            <h1>Count Your AI Tokens.<br>Cut Your Costs by 50%.</h1>
+            <p class="subtitle">TokenOptim tracks every token you send to Claude, ChatGPT, Gemini, Grok, and more. Real-time compression. Zero setup.</p>
+            
+            <div class="cta-group">
+                <a href="https://chrome.google.com/webstore/detail/tokenoptim" class="btn btn-primary" title="Install TokenOptim on Chrome Web Store">
+                    ⬇ Install on Chrome
+                </a>
+                <a href="https://github.com/adifydigitalnoida-del/tokenoptim" class="btn btn-secondary" title="Clone TokenOptim from GitHub">
+                    💻 Clone from GitHub
+                </a>
+            </div>
+
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">
+                <strong>Free. Forever.</strong> No credit card. No telemetry. Open source. 100+ GitHub stars.
+            </p>
         </div>
     </section>
 
-    <section class="problem">
-        <div class="problem-content">
-            <h2>The Problem: Overpaying for AI</h2>
-            <div class="cost-grid">
-                <div class="cost-card">
-                    <h3>Claude</h3>
-                    <div class="price">$3.00</div>
-                    <div style="color:#666;font-size:14px;">per 1M tokens</div>
+    <!-- Features -->
+    <section class="features">
+        <h2>Why TokenOptim?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Real-Time Counting</h3>
+                <p>See token cost before you send. Know your API bill before it shocks you.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📉</div>
+                <h3>Compression Engine</h3>
+                <p>Get suggestions to cut tokens by 30-50%. Same output. Lower cost.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3>Multi-Model Support</h3>
+                <p>Count tokens for Claude, ChatGPT-4, Gemini, Grok, Kimi, GLM. All in one place.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💾</div>
+                <h3>Semantic Caching</h3>
+                <p>Reuse prompts. Pay 90% less for cached tokens. Save thousands per month.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Cost Analytics</h3>
+                <p>Track spending. Set alerts. Export reports. Know where your money goes.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔐</div>
+                <h3>Zero Telemetry</h3>
+                <p>Your prompts never leave your machine. No tracking. No data collection. Privacy first.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Install paths -->
+    <section class="install-section">
+        <h2>How to Get Started</h2>
+        <div class="install-grid">
+            <div class="install-card">
+                <h3>🖥 Desktop</h3>
+                <p>Chrome extension. Load in dev mode. Instant token counting while coding.</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">2 min setup</p>
+                <a href="/install/desktop" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="install-card">
+                <h3>🚀 Enterprise</h3>
+                <p>Self-hosted. Full control. Deploy to your servers. Team collaboration.</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">1+ hour setup</p>
+                <a href="/install/enterprise" class="btn btn-secondary">Read Docs</a>
+            </div>
+            <div class="install-card">
+                <h3>☁ Web (SaaS)</h3>
+                <p>No installation. Sign up. Paste prompt. Get token count instantly.</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">30 sec setup</p>
+                <a href="/install/web" class="btn btn-secondary">Try It</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Education -->
+    <section class="blog-section">
+        <h2>Learn About Token Optimization</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <span class="blog-tag">FUNDAMENTALS</span>
+                <h3>Understanding AI Tokens</h3>
+                <p>What are tokens? Why do they matter? How much do they cost? Everything you need to know.</p>
+                <div class="blog-meta">
+                    <span>6 min read</span>
+                    <a href="/blog/understanding-tokens" style="color: var(--accent);">Read →</a>
                 </div>
-                <div class="cost-card">
-                    <h3>ChatGPT</h3>
-                    <div class="price">$5.00</div>
-                    <div style="color:#666;font-size:14px;">per 1M tokens</div>
+            </div>
+
+            <div class="blog-card">
+                <span class="blog-tag">OPTIMIZATION</span>
+                <h3>Token Compression Guide</h3>
+                <p>7 proven strategies to cut 30-50% of tokens. Real examples. ROI calculations. Immediate savings.</p>
+                <div class="blog-meta">
+                    <span>8 min read</span>
+                    <a href="/blog/token-compression" style="color: var(--accent);">Read →</a>
                 </div>
-                <div class="cost-card">
-                    <h3>Gemini</h3>
-                    <div class="price">$0.075</div>
-                    <div style="color:#666;font-size:14px;">per 1M tokens</div>
+            </div>
+
+            <div class="blog-card">
+                <span class="blog-tag">COMPARISON</span>
+                <h3>Token Costs: Claude vs ChatGPT vs Gemini</h3>
+                <p>Which model is cheapest? Head-to-head pricing. Real-world scenarios. Cost per request.</p>
+                <div class="blog-meta">
+                    <span>7 min read</span>
+                    <a href="/blog/token-comparison" style="color: var(--accent);">Read →</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <span class="blog-tag">BUDGETING</span>
+                <h3>Building a Token Budget for Your Team</h3>
+                <p>Set quotas. Track spending. Control costs. Template spreadsheet included.</p>
+                <div class="blog-meta">
+                    <span>6 min read</span>
+                    <a href="/blog/token-budgeting" style="color: var(--accent);">Read →</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <span class="blog-tag">ADVANCED</span>
+                <h3>Advanced Token Optimization Tactics</h3>
+                <p>Semantic caching. Batch APIs. Prompt engineering. Save 60-70% at scale.</p>
+                <div class="blog-meta">
+                    <span>10 min read</span>
+                    <a href="/blog/advanced-token-optimization" style="color: var(--accent);">Read →</a>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <span class="blog-tag">TOOLS</span>
+                <h3>Best Token Optimizer Tools (2026)</h3>
+                <p>TokenOptim. OpenAI tokenizer. Anthropic SDK. Langsmith. Feature comparison.</p>
+                <div class="blog-meta">
+                    <span>5 min read</span>
+                    <a href="/blog/best-token-tools" style="color: var(--accent);">Coming soon</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="solution">
-        <div class="solution-content">
-            <h2>The Solution: Automatic Routing</h2>
-            <table class="routing-table">
-                <thead>
-                    <tr>
-                        <th>Task</th>
-                        <th>Best Model</th>
-                        <th>Savings</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Summarization</td>
-                        <td>Gemini</td>
-                        <td class="savings">97.5%</td>
-                    </tr>
-                    <tr>
-                        <td>Extraction</td>
-                        <td>Gemini</td>
-                        <td class="savings">97.5%</td>
-                    </tr>
-                    <tr>
-                        <td>Writing</td>
-                        <td>ChatGPT</td>
-                        <td class="savings">40%</td>
-                    </tr>
-                    <tr>
-                        <td>Coding</td>
-                        <td>Claude</td>
-                        <td class="savings">0%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <!-- Pricing / ROI -->
+    <section class="pricing-section">
+        <h2>The Math is Simple</h2>
+        <div class="pricing-highlight">Free. Forever.</div>
+        <p class="pricing-subtext">
+            TokenOptim is a free, open-source Chrome extension. No upgrades. No paywalls. Save money from day one.
+        </p>
+        <p style="color: var(--text-secondary); font-size: 1rem;">
+            For 10-person teams spending $1,000+ on AI APIs monthly:<br><strong>$3,000-5,000 saved per year. Minimum.</strong>
+        </p>
     </section>
 
-    <section id="features" class="features">
-        <div class="features-content">
-            <h2>Built for Developers</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <h3>✅ Token Counter</h3>
-                    <p>See exactly how many tokens you're using.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>✅ Semantic Caching</h3>
-                    <p>60-90% additional savings on repeated tasks.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>✅ Cost Dashboard</h3>
-                    <p>Beautiful breakdown of spending.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>✅ Auto-Optimizer</h3>
-                    <p>Automatically route to cheapest model.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>✅ Budget Alerts</h3>
-                    <p>Get notified before you hit limits.</p>
-                </div>
-                <div class="feature-item">
-                    <h3>✅ Privacy First</h3>
-                    <p>Your API keys stay local. Zero data collection.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats">
-        <div class="stats-content">
-            <h2>Trusted by Developers</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Active users</p>
-                </div>
-                <div class="stat-item">
-                    <h3>$347</h3>
-                    <p>Avg savings/month</p>
-                </div>
-                <div class="stat-item">
-                    <h3>8.7/10</h3>
-                    <p>User rating</p>
-                </div>
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Free forever</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta">
-        <div class="cta-content">
-            <h2>Start Saving Today</h2>
-            <p>Install TokenOptim in 30 seconds.</p>
-            <a href="https://chrome.google.com/webstore" class="btn-primary">Install TokenOptim</a>
-        </div>
-    </section>
-
+    <!-- Footer -->
     <footer>
-        <p>TokenOptim • Save 30-50% on AI API costs automatically</p>
-        <div style="margin:20px 0;">
-            <a href="https://github.com/adifydigitalnoida-del/tokenoptim">GitHub</a>
-            <a href="https://github.com/adifydigitalnoida-del/tokenoptim/discussions">Community</a>
-            <a href="https://twitter.com/tokenoptim">Twitter</a>
+        <div class="footer-links">
+            <a href="/" title="TokenOptim homepage">Home</a>
+            <a href="/blog/" title="TokenOptim blog posts">Blog</a>
+            <a href="/install/desktop" title="Desktop installation guide">Install</a>
+            <a href="https://github.com/adifydigitalnoida-del/tokenoptim" title="TokenOptim GitHub repository">GitHub</a>
+            <a href="https://github.com/adifydigitalnoida-del/tokenoptim/discussions" title="Join our community discussions">Discussions</a>
+            <a href="https://twitter.com/arshtiwarigives" title="Follow on Twitter">Twitter</a>
         </div>
-        <p style="margin-top:20px;color:#666;font-size:12px;">© 2026 TokenOptim. MIT license.</p>
+        <p>
+            Made by <a href="https://twitter.com/arshtiwarigives" title="Arsh - TokenOptim creator">Arsh</a> • 
+            <a href="https://github.com/adifydigitalnoida-del/tokenoptim/blob/main/LICENSE" title="MIT License">MIT License</a>
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.85rem;">
+            © 2026 TokenOptim. Built with ❤️ for developers who care about cost efficiency.
+        </p>
     </footer>
+
+    <!-- Schema markup for SEO -->
+    <script type="application/ld+json" class="hidden">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TokenOptim",
+      "description": "Free Chrome extension to count, compress, and cache AI tokens. Save 30-50% on Claude, ChatGPT, Gemini API costs.",
+      "url": "https://tokenoptim-landing.vercel.app",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "downloadUrl": "https://chrome.google.com/webstore/detail/tokenoptim"
+    }
+    </script>
+
+    <script type="application/ld+json" class="hidden">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "TokenOptim",
+      "url": "https://tokenoptim-landing.vercel.app",
+      "logo": "https://tokenoptim-landing.vercel.app/logo.png",
+      "sameAs": [
+        "https://github.com/adifydigitalnoida-del/tokenoptim",
+        "https://twitter.com/arshtiwarigives"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "url": "https://github.com/adifydigitalnoida-del/tokenoptim/issues"
+      }
+    }
+    </script>
 </body>
 </html>
