@@ -1,0 +1,9 @@
+{
+  "buildCommand": "echo 'Static files only'",
+  "outputDirectory": ".",
+  "framework": null,
+  "rewrites": [
+    { "source": "/blog/:path*", "destination": "/blog/:path*" },
+    { "source": "/install/:path*", "destination": "/install/:path*" }
+  ]
+}
