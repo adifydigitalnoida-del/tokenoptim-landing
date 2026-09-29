@@ -1,98 +1,506 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TokenOptim | Free AI Token Counter</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #050505 0%, #1a0033 50%, #050505 100%);
-            color: #fff;
-            padding: 2rem;
-        }
-        .container { max-width: 1200px; margin: 0 auto; }
-        h1 { font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(90deg, #fff, #00d9ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero { text-align: center; padding: 3rem 0; }
-        .btn { display: inline-block; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; margin: 0.5rem; transition: all 0.3s; }
-        .btn-primary { background: #00d9ff; color: #000; }
-        .btn-primary:hover { background: #0099cc; }
-        .btn-secondary { background: transparent; color: #00d9ff; border: 2px solid #00d9ff; }
-        .section { margin: 3rem 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { background: #0f0f0f; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; }
-        .card h3 { color: #00d9ff; margin-bottom: 1rem; }
-        .card a { color: #00d9ff; text-decoration: none; }
-        footer { text-align: center; margin-top: 3rem; color: #666; padding-top: 2rem; border-top: 1px solid #222; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="hero">
-            <h1>TokenOptim</h1>
-            <p style="font-size: 1.3rem; color: #b0b0b0; margin: 1rem 0;">Count tokens. Compress prompts. Save money on AI APIs.</p>
-            <div>
-                <a href="https://chrome.google.com/webstore/detail/tokenoptim" class="btn btn-primary">⬇ Install on Chrome</a>
-                <a href="https://github.com/adifydigitalnoida-del/tokenoptim" class="btn btn-secondary">💻 Clone from GitHub</a>
-            </div>
-        </div>
 
-        <div class="section">
-            <h2 style="text-align: center; color: #00d9ff; margin-bottom: 2rem;">📚 Blog Posts</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Understanding AI Tokens</h3>
-                    <p>What are tokens? Why do they matter?</p>
-                    <a href="/blog/understanding-tokens">Read →</a>
-                </div>
-                <div class="card">
-                    <h3>Token Compression Guide</h3>
-                    <p>7 strategies to cut costs by 40%</p>
-                    <a href="/blog/token-compression">Read →</a>
-                </div>
-                <div class="card">
-                    <h3>Claude vs ChatGPT vs Gemini</h3>
-                    <p>Which model is cheapest?</p>
-                    <a href="/blog/token-comparison">Read →</a>
-                </div>
-                <div class="card">
-                    <h3>Team Budget Management</h3>
-                    <p>Track and control costs</p>
-                    <a href="/blog/token-budgeting">Read →</a>
-                </div>
-                <div class="card">
-                    <h3>Advanced Optimization</h3>
-                    <p>Semantic caching, batching & more</p>
-                    <a href="/blog/advanced-token-optimization">Read →</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2 style="text-align: center; color: #00d9ff; margin-bottom: 2rem;">🚀 Installation</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>🖥 Desktop</h3>
-                    <p>Chrome extension (2 min setup)</p>
-                    <a href="/install/desktop">Get Started →</a>
-                </div>
-                <div class="card">
-                    <h3>🏢 Enterprise</h3>
-                    <p>Self-hosted (full control)</p>
-                    <a href="/install/enterprise">Read Docs →</a>
-                </div>
-                <div class="card">
-                    <h3>☁ Web</h3>
-                    <p>SaaS version (no install)</p>
-                    <a href="/install/web">Try It →</a>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>TokenOptim | <a href="https://github.com/adifydigitalnoida-del/tokenoptim" style="color: #00d9ff;">GitHub</a> | <a href="https://twitter.com/arshtiwarigives" style="color: #00d9ff;">Twitter</a></p>
-        </footer>
-    </div>
-</body>
-</html>
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"inverse-surface":"#e5e2e1","surface-container-lowest":"#0e0e0e","on-primary-fixed":"#001f26","secondary-fixed":"#c3e8ff","secondary":"#78d1ff","primary-fixed":"#aeecff","background":"#131313","inverse-on-surface":"#313030","on-primary-fixed-variant":"#004e5d","primary":"#afecff","surface-variant":"#353534","surface-container-highest":"#353534","on-error":"#690005","surface-container":"#201f1f","on-tertiary-fixed":"#1c1b1b","on-error-container":"#ffdad6","tertiary-fixed-dim":"#c8c6c5","surface-bright":"#3a3939","tertiary":"#e5e2e1","surface":"#131313","on-background":"#e5e2e1","surface-dim":"#131313","outline-variant":"#3c494d","on-tertiary-container":"#535252","surface-container-high":"#2a2a2a","secondary-container":"#0b9bcf","tertiary-container":"#c9c6c6","surface-tint":"#00d9ff","surface-container-low":"#1c1b1b","on-primary-container":"#005b6c","tertiary-fixed":"#e5e2e1","error-container":"#93000a","secondary-fixed-dim":"#78d1ff","on-secondary-fixed-variant":"#004c68","error":"#ffb4ab","on-secondary-container":"#002d40","on-tertiary":"#313030","on-tertiary-fixed-variant":"#474646","on-primary":"#003641","on-secondary":"#003549","outline":"#859398","on-surface":"#e5e2e1","on-surface-variant":"#bbc9ce","primary-fixed-dim":"#00d9ff","on-secondary-fixed":"#001e2c","inverse-primary":"#00687b","primary-container":"#00d9ff"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-lg":"1.5rem","gutter-mobile":"1rem","space-xs":"0.25rem","margin-mobile":"1.25rem","space-md":"1rem","margin":"2rem","gutter":"1.5rem","space-sm":"0.5rem","space-xl":"2.5rem"},"fontFamily":{"headline-md":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"label-md":["JetBrains Mono"],"display":["Space Grotesk"],"title-sm":["Geist"],"display-mobile":["Space Grotesk"],"body-md":["Geist"],"body-lg":["Geist"],"label-sm":["JetBrains Mono"],"metric-xl":["JetBrains Mono"],"headline-lg":["Space Grotesk"],"code-inline":["JetBrains Mono"]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"500"}],"display":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"title-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"display-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.06em","fontWeight":"600"}],"metric-xl":["32px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"600"}],"code-inline":["13px",{"lineHeight":"18px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/80 backdrop-blur-md border-b border-surface-container-high"><div class="h-16 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><a class="flex items-center gap-space-sm" data-path="overview" href="#"><img alt="TokenOptim Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Vqk4LPEjuzEbaJcaoAfyCM8Cdx-TjtDiobm_D7tdOkOy4F6cjOM5WZc40PhsayU8lwFuD-ZA2RghS0dfdDysH87yxxbKhD6LnaiSaHE5We2DrTt3b4d1T0ckO-sb-EuiR6M0Lf0G3GSbfApHg_Kc6W4cwGEMQZ-b4sFyJpRnnzDWr701WgRWGCFlFw9Be-bgetseo-Rwor3nHnM_WteefHPNJK3SRpGjLD6pDj8R-_eaOfjqR8lhqkMRx2"/><span class="font-headline-md text-title-sm tracking-tight text-on-surface font-bold">TokenOptim</span></a><span class="hidden sm:inline-flex items-center px-space-xs py-0.5 rounded bg-surface-container-high border border-outline-variant font-label-sm text-label-sm text-primary tracking-wider uppercase font-semibold">v2.4 Live</span></div><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-colors" data-path="features" href="#features">Features</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-colors" data-path="installation" href="#installation">Install Guides</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-colors" data-path="benchmarks" href="#benchmarks">Benchmarks</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-colors" data-path="research-and-blog" href="#blog">Research &amp; Blog</a><a class="text-on-surface-variant hover:text-on-surface font-body-md text-body-md transition-colors" data-path="documentation" href="#docs">Documentation</a></nav><div class="flex items-center gap-space-sm"><a class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-space-xs rounded bg-surface-container-low border border-surface-container-high hover:border-outline hover:text-on-surface text-on-surface-variant font-label-md text-label-md transition-all" href="https://github.com" rel="noreferrer" target="_blank"><span class="material-symbols-outlined text-[16px]">code</span><span>GitHub</span><span class="text-primary font-semibold pl-space-xs border-l border-surface-container-high">★ 4.8k</span></a><a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded bg-primary-container hover:bg-white text-on-primary-container font-label-md text-label-md font-semibold shadow-[0_0_20px_rgba(0,217,255,0.35)] hover:shadow-[0_0_24px_rgba(0,217,255,0.6)] transition-all" href="#installation"><span class="material-symbols-outlined text-[18px]">download</span><span>Install Extension</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-space-xs shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-[calc(100vh-64px)]"><div class="flex flex-col w-full text-on-surface">
+<!-- Ambient Glow Effect for Top Section -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gradient-to-tr from-primary-container/15 via-secondary-container/10 to-transparent blur-[120px] pointer-events-none rounded-full"></div>
+<!-- Hero Container -->
+<div class="max-w-7xl mx-auto px-gutter pt-space-xl pb-space-xl relative z-10 flex flex-col items-center text-center">
+<!-- Eyebrow Badge -->
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container border border-surface-container-high shadow-[0_0_16px_rgba(0,217,255,0.15)] mb-space-md">
+<span class="inline-block w-2 h-2 rounded-full bg-primary-container shadow-[0_0_8px_#00d9ff] animate-pulse"></span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-primary font-semibold">
+          ⚡ CHROME WEB STORE FEATURED EXTENSION • 0ms CLIENT-SIDE LATENCY
+        </span>
+</div>
+<!-- Hero Headline -->
+<h1 class="font-display text-display max-w-4xl tracking-tight mb-space-md">
+        Count, Compress &amp; <span class="bg-gradient-to-r from-primary-container via-secondary to-primary bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(0,217,255,0.35)]">Slash LLM Tokens</span> in Real-Time.
+      </h1>
+<!-- Hero Subhead -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-space-lg leading-relaxed">
+        The ultra-lightweight browser extension for engineers, prompt architects, and AI researchers. Inspect tokens across ChatGPT, Claude, and Gemini with zero latency and zero data leakage.
+      </p>
+<!-- Dual CTAs -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md mb-space-xl w-full sm:w-auto">
+<a class="w-full sm:w-auto px-space-lg py-space-md rounded-xl bg-primary-container text-on-primary-container font-headline-md text-title-sm font-semibold flex items-center justify-center gap-space-sm shadow-[0_0_28px_rgba(0,217,255,0.4)] hover:bg-white hover:shadow-[0_0_36px_rgba(0,217,255,0.7)] transition-all group" href="#installation">
+<span class="material-symbols-outlined text-[24px]">extension</span>
+<div class="text-left">
+<div>Install on Chrome</div>
+<div class="font-label-sm text-label-sm font-normal text-on-primary-container/80">Free • Instant Setup</div>
+</div>
+</a>
+<a class="w-full sm:w-auto px-space-lg py-space-md rounded-xl bg-surface-container border border-surface-container-high hover:border-primary-container/50 text-on-surface font-headline-md text-title-sm font-semibold flex items-center justify-center gap-space-sm hover:shadow-[0_0_20px_rgba(0,217,255,0.15)] transition-all group" href="https://github.com" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[24px]">code</span>
+<div class="text-left">
+<div>Clone from GitHub</div>
+<div class="font-label-sm text-label-sm font-normal text-on-surface-variant group-hover:text-primary">MIT License • 4.8k ★</div>
+</div>
+</a>
+</div>
+<!-- Trust Metrics Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md w-full max-w-4xl py-space-md px-space-lg rounded-xl bg-surface-container-lowest/80 border border-surface-container-high backdrop-blur-md mb-space-xl">
+<div class="flex flex-col items-center text-center">
+<span class="font-metric-xl text-metric-xl text-primary font-bold">45,000+</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Active Developers</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-metric-xl text-metric-xl text-primary font-bold">12.4B</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Tokens Saved</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-metric-xl text-metric-xl text-primary font-bold">0</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Data Packets Sent</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-metric-xl text-metric-xl text-primary font-bold">&lt; 1ms</span>
+<span class="font-label-md text-label-md text-on-surface-variant">WASM Encoding</span>
+</div>
+</div>
+<!-- Interactive Glassmorphic Extension Mockup -->
+<div class="w-full max-w-3xl rounded-2xl bg-surface-container/90 border border-primary-container/40 p-space-md sm:p-space-lg shadow-[0_24px_60px_rgba(0,0,0,0.8),0_0_40px_rgba(0,217,255,0.12)] backdrop-blur-xl text-left relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-container to-transparent"></div>
+<!-- Extension Popover Header -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[22px]">speed</span>
+<div>
+<div class="font-headline-md text-body-md font-bold text-on-surface flex items-center gap-space-xs">
+                TokenOptim Engine
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Monitoring Active Tab: <span class="text-primary">chatgpt.com</span></div>
+</div>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest p-1 rounded-lg border border-surface-container-high font-label-sm text-label-sm">
+<button class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-semibold">o200k (GPT-4o)</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface">Claude 3.5</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface">Gemini 1.5</button>
+</div>
+</div>
+<!-- Token Visualizer Workspace -->
+<div class="pt-space-md">
+<div class="flex items-center justify-between text-label-sm font-label-sm mb-space-xs text-on-surface-variant">
+<span>LIVE INTERCEPTOR (PROMPT BUFFER)</span>
+<span class="text-primary flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">memory</span> WASM 0.2ms</span>
+</div>
+<!-- Color-Coded Token Stream -->
+<div class="bg-surface-container-lowest rounded-xl p-space-sm sm:p-space-md border border-surface-container-high font-code-inline text-code-inline leading-relaxed mb-space-md select-none">
+<span class="bg-primary/20 text-primary px-1 py-0.5 rounded border border-primary/30">You</span>
+<span class="bg-secondary/20 text-secondary px-1 py-0.5 rounded border border-secondary/30 ml-0.5">are</span>
+<span class="bg-primary/20 text-primary px-1 py-0.5 rounded border border-primary/30 ml-0.5">an</span>
+<span class="bg-purple-500/20 text-purple-300 px-1 py-0.5 rounded border border-purple-500/30 ml-0.5">elite</span>
+<span class="bg-secondary/20 text-secondary px-1 py-0.5 rounded border border-secondary/30 ml-0.5">compiler</span>
+<span class="bg-primary/20 text-primary px-1 py-0.5 rounded border border-primary/30 ml-0.5">architect</span>
+<span class="bg-emerald-500/20 text-emerald-300 px-1 py-0.5 rounded border border-emerald-500/30 ml-0.5">.</span>
+<span class="bg-surface-container-high text-on-surface-variant line-through px-1 py-0.5 rounded ml-0.5" title="Pruned: Redundant conversational filler">Please carefully inspect</span>
+<span class="bg-primary/20 text-primary px-1 py-0.5 rounded border border-primary/30 ml-0.5">the</span>
+<span class="bg-secondary/20 text-secondary px-1 py-0.5 rounded border border-secondary/30 ml-0.5">following</span>
+<span class="bg-purple-500/20 text-purple-300 px-1 py-0.5 rounded border border-purple-500/30 ml-0.5">Rust</span>
+<span class="bg-primary/20 text-primary px-1 py-0.5 rounded border border-primary/30 ml-0.5">AST</span>
+<span class="bg-secondary/20 text-secondary px-1 py-0.5 rounded border border-secondary/30 ml-0.5">and</span>
+<span class="bg-emerald-500/20 text-emerald-300 px-1 py-0.5 rounded border border-emerald-500/30 ml-0.5">optimize</span>
+<span class="bg-primary/20 text-primary px-1 py-0.5 rounded border border-primary/30 ml-0.5">register</span>
+<span class="bg-secondary/20 text-secondary px-1 py-0.5 rounded border border-secondary/30 ml-0.5">allocation</span>
+<span class="bg-surface-container-high text-on-surface-variant line-through px-1 py-0.5 rounded ml-0.5" title="Pruned: Politeness fluff">if you would be so kind</span>
+<span class="inline-block w-2 h-4 bg-primary-container align-middle ml-1 animate-pulse"></span>
+</div>
+<!-- Bottom Telemetry & Compression Controls -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm items-center bg-surface-container-low p-space-sm rounded-xl border border-surface-container-high">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[20px]">data_usage</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">TOKEN COUNT</div>
+<div class="font-label-md text-body-md font-bold text-on-surface">548 <span class="text-on-surface-variant text-label-sm line-through font-normal">842</span></div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-emerald-400 text-[20px]">savings</span>
+<div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">COST &amp; SAVINGS</div>
+<div class="font-label-md text-body-md font-bold text-emerald-400">-34.9% <span class="text-on-surface-variant text-label-sm font-normal">($0.0028)</span></div>
+</div>
+</div>
+<div class="flex items-center justify-between sm:justify-end gap-space-sm">
+<div class="text-right">
+<div class="font-label-sm text-label-sm text-on-surface font-semibold">Semantic Pruning</div>
+<div class="font-label-sm text-[10px] text-primary">99.4% intent fidelity</div>
+</div>
+<div class="w-10 h-5 bg-primary-container rounded-full relative cursor-pointer p-0.5 flex items-center justify-end">
+<div class="w-4 h-4 rounded-full bg-on-primary-container shadow-sm"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: CORE FEATURES (3-Column Grid) -->
+<section class="w-full py-space-xl border-t border-surface-container-high bg-surface-container-lowest/40" id="features">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="text-center max-w-3xl mx-auto mb-space-xl">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">PRECISION ARCHITECTURE</span>
+<h2 class="font-headline-lg text-headline-lg mt-space-xs mb-space-xs text-on-surface">Engineered for Extreme Efficiency</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Eliminate token bloat and optimize context windows before you hit send.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Feature 1 -->
+<div class="group bg-surface-container p-space-lg rounded-2xl border border-surface-container-high hover:border-primary-container/60 hover:shadow-[0_12px_32px_rgba(0,217,255,0.12)] transition-all duration-300 relative overflow-hidden">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest border border-surface-container-high flex items-center justify-center mb-space-md text-primary-container shadow-[0_0_16px_rgba(0,217,255,0.15)] group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[26px]">pulse_alert</span>
+</div>
+<h3 class="font-headline-md text-title-sm mb-space-xs text-on-surface group-hover:text-primary transition-colors">Real-Time Token Counting</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Instantaneous tokenization running client-side with native WebAssembly tiktoken and sentencepiece. Zero lag while typing across active tab DOM contexts.
+          </p>
+</div>
+<!-- Feature 2 -->
+<div class="group bg-surface-container p-space-lg rounded-2xl border border-surface-container-high hover:border-primary-container/60 hover:shadow-[0_12px_32px_rgba(0,217,255,0.12)] transition-all duration-300 relative overflow-hidden">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest border border-surface-container-high flex items-center justify-center mb-space-md text-primary-container shadow-[0_0_16px_rgba(0,217,255,0.15)] group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[26px]">unfold_less</span>
+</div>
+<h3 class="font-headline-md text-title-sm mb-space-xs text-on-surface group-hover:text-primary transition-colors">Semantic Compression</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Remove filler tokens, structural redundancies, and boilerplate system prompts while preserving 99.8% semantic intent and benchmark reasoning fidelity.
+          </p>
+</div>
+<!-- Feature 3 -->
+<div class="group bg-surface-container p-space-lg rounded-2xl border border-surface-container-high hover:border-primary-container/60 hover:shadow-[0_12px_32px_rgba(0,217,255,0.12)] transition-all duration-300 relative overflow-hidden">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest border border-surface-container-high flex items-center justify-center mb-space-md text-primary-container shadow-[0_0_16px_rgba(0,217,255,0.15)] group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[26px]">hub</span>
+</div>
+<h3 class="font-headline-md text-title-sm mb-space-xs text-on-surface group-hover:text-primary transition-colors">Multi-Model Tokenizer Support</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Seamlessly switch between OpenAI (cl100k_base, o200k_base), Anthropic Claude, Meta LLaMA 3, and Google Gemini 1.5 token vocabularies on the fly.
+          </p>
+</div>
+<!-- Feature 4 -->
+<div class="group bg-surface-container p-space-lg rounded-2xl border border-surface-container-high hover:border-primary-container/60 hover:shadow-[0_12px_32px_rgba(0,217,255,0.12)] transition-all duration-300 relative overflow-hidden">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest border border-surface-container-high flex items-center justify-center mb-space-md text-primary-container shadow-[0_0_16px_rgba(0,217,255,0.15)] group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[26px]">bolt</span>
+</div>
+<h3 class="font-headline-md text-title-sm mb-space-xs text-on-surface group-hover:text-primary transition-colors">Semantic Prompt Caching</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Detect cacheable prefixes and static context headers to maximize OpenAI and Anthropic 50% prompt cache discounts through deterministic byte alignment.
+          </p>
+</div>
+<!-- Feature 5 -->
+<div class="group bg-surface-container p-space-lg rounded-2xl border border-surface-container-high hover:border-primary-container/60 hover:shadow-[0_12px_32px_rgba(0,217,255,0.12)] transition-all duration-300 relative overflow-hidden">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest border border-surface-container-high flex items-center justify-center mb-space-md text-primary-container shadow-[0_0_16px_rgba(0,217,255,0.15)] group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[26px]">monitoring</span>
+</div>
+<h3 class="font-headline-md text-title-sm mb-space-xs text-on-surface group-hover:text-primary transition-colors">Cost Analytics &amp; Budget Forecasting</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Track expenditure across engineering seats and individual sessions with synchronized per-model pricing tables and custom expenditure warning ceilings.
+          </p>
+</div>
+<!-- Feature 6 -->
+<div class="group bg-surface-container p-space-lg rounded-2xl border border-surface-container-high hover:border-primary-container/60 hover:shadow-[0_12px_32px_rgba(0,217,255,0.12)] transition-all duration-300 relative overflow-hidden">
+<div class="w-12 h-12 rounded-xl bg-surface-container-lowest border border-surface-container-high flex items-center justify-center mb-space-md text-primary-container shadow-[0_0_16px_rgba(0,217,255,0.15)] group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined text-[26px]">verified_user</span>
+</div>
+<h3 class="font-headline-md text-title-sm mb-space-xs text-on-surface group-hover:text-primary transition-colors">Zero Telemetry Architecture</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            100% offline-capable and strictly client-side. Your sensitive enterprise prompts, proprietary code, and API keys never leave local browser memory.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: INTERACTIVE BENCHMARK & COMPARISON TABLE -->
+<section class="w-full py-space-xl bg-surface" id="benchmarks">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="rounded-3xl bg-surface-container border border-surface-container-high p-space-lg md:p-space-xl relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<span class="font-label-md text-label-md text-primary font-semibold uppercase tracking-wider">LAB BENCHMARKS (1M TOKENS LOAD)</span>
+<h2 class="font-headline-lg text-headline-lg mt-space-xs text-on-surface">Token Efficiency Matrix</h2>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded-lg border border-surface-container-high font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+<span>Measured with TokenOptim v2.4 Semantic Engine</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-md text-body-md">
+<thead>
+<tr class="border-b border-surface-container-high text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-space-sm px-space-md">Model Architecture</th>
+<th class="py-space-sm px-space-md">Raw Prompt Tokens</th>
+<th class="py-space-sm px-space-md">TokenOptim Pruned</th>
+<th class="py-space-sm px-space-md">Tokens Preserved</th>
+<th class="py-space-sm px-space-md">Cost Savings / 1M</th>
+<th class="py-space-sm px-space-md text-right">TTFT Speedup</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high font-label-md text-body-md">
+<tr class="hover:bg-primary-container/5 transition-colors">
+<td class="py-space-md px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> OpenAI GPT-4o (o200k)
+                </td>
+<td class="py-space-md px-space-md text-on-surface-variant">1,000,000</td>
+<td class="py-space-md px-space-md text-primary font-bold">642,300</td>
+<td class="py-space-md px-space-md text-emerald-400">99.7% Fidelity</td>
+<td class="py-space-md px-space-md text-emerald-400 font-bold">$1,788 saved</td>
+<td class="py-space-md px-space-md text-right text-primary">+38% faster</td>
+</tr>
+<tr class="hover:bg-primary-container/5 transition-colors">
+<td class="py-space-md px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> Anthropic Claude 3.5 Sonnet
+                </td>
+<td class="py-space-md px-space-md text-on-surface-variant">1,000,000</td>
+<td class="py-space-md px-space-md text-primary font-bold">681,100</td>
+<td class="py-space-md px-space-md text-emerald-400">99.9% Fidelity</td>
+<td class="py-space-md px-space-md text-emerald-400 font-bold">$956 saved</td>
+<td class="py-space-md px-space-md text-right text-primary">+32% faster</td>
+</tr>
+<tr class="hover:bg-primary-container/5 transition-colors">
+<td class="py-space-md px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-purple-400"></span> Google Gemini 1.5 Pro
+                </td>
+<td class="py-space-md px-space-md text-on-surface-variant">1,000,000</td>
+<td class="py-space-md px-space-md text-primary font-bold">612,400</td>
+<td class="py-space-md px-space-md text-emerald-400">99.5% Fidelity</td>
+<td class="py-space-md px-space-md text-emerald-400 font-bold">$1,356 saved</td>
+<td class="py-space-md px-space-md text-right text-primary">+41% faster</td>
+</tr>
+<tr class="hover:bg-primary-container/5 transition-colors">
+<td class="py-space-md px-space-md font-semibold text-on-surface flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span> Meta LLaMA 3 (8B/70B)
+                </td>
+<td class="py-space-md px-space-md text-on-surface-variant">1,000,000</td>
+<td class="py-space-md px-space-md text-primary font-bold">660,800</td>
+<td class="py-space-md px-space-md text-emerald-400">99.8% Fidelity</td>
+<td class="py-space-md px-space-md text-emerald-400 font-bold">$271 saved</td>
+<td class="py-space-md px-space-md text-right text-primary">+34% faster</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: 3 INSTALLATION PATHS -->
+<section class="w-full py-space-xl border-t border-surface-container-high bg-surface-container-lowest/30" id="installation">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="text-center max-w-3xl mx-auto mb-space-xl">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">FLEXIBLE INTEGRATION</span>
+<h2 class="font-headline-lg text-headline-lg mt-space-xs mb-space-xs text-on-surface">Deploy Wherever You Build</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">From individual researchers to security-conscious enterprise teams.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-lg items-stretch">
+<!-- Path 1: Chrome Extension (Featured) -->
+<div class="flex flex-col justify-between bg-surface-container p-space-lg rounded-3xl border-2 border-primary-container shadow-[0_0_36px_rgba(0,217,255,0.2)] relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-wider px-space-md py-1 rounded-bl-xl">
+            Most Popular
+          </div>
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<span class="material-symbols-outlined text-primary-container text-[28px]">extension</span>
+<h3 class="font-headline-md text-title-sm text-on-surface font-bold">Desktop - Chrome Extension</h3>
+</div>
+<div class="font-label-md text-label-md text-primary font-semibold mb-space-md">Free forever • Open Source</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              Single-click installation directly from Chrome Web Store. Injects unobtrusive telemetry into ChatGPT, Claude, Cursor, and v0.
+            </p>
+<ul class="flex flex-col gap-space-sm mb-space-lg font-body-md text-body-md text-on-surface">
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span> One-click browser install</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span> Auto-detects active LLM interfaces</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span> WASM local tokenizer (0 latency)</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary-container text-[18px]">check_circle</span> Fully MIT Licensed on GitHub</li>
+</ul>
+</div>
+<button class="w-full py-space-md rounded-xl bg-primary-container text-on-primary-container font-headline-md text-title-sm font-semibold hover:bg-white shadow-[0_0_20px_rgba(0,217,255,0.4)] transition-all flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">download</span> Add to Chrome - Free
+          </button>
+</div>
+<!-- Path 2: Enterprise -->
+<div class="flex flex-col justify-between bg-surface-container p-space-lg rounded-3xl border border-surface-container-high hover:border-outline transition-all">
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<span class="material-symbols-outlined text-secondary text-[28px]">domain</span>
+<h3 class="font-headline-md text-title-sm text-on-surface font-bold">Enterprise - Self-Hosted</h3>
+</div>
+<div class="font-label-md text-label-md text-secondary font-semibold mb-space-md">Air-Gapped • Custom LLMs</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              On-premises Docker container or custom enterprise extension build with centralized SSO and automated team token limits.
+            </p>
+<ul class="flex flex-col gap-space-sm mb-space-lg font-body-md text-body-md text-on-surface">
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span> Air-gapped network enforcement</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span> Custom tokenizer dictionary loading</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span> Okta / SAML enterprise SSO</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span> SOC 2 Type II compliance pack</li>
+</ul>
+</div>
+<button class="w-full py-space-md rounded-xl bg-surface-container-high border border-outline hover:border-secondary text-on-surface font-headline-md text-title-sm font-semibold hover:shadow-[0_0_16px_rgba(120,209,255,0.2)] transition-all flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span> Download Enterprise Build
+          </button>
+</div>
+<!-- Path 3: Headless API -->
+<div class="flex flex-col justify-between bg-surface-container p-space-lg rounded-3xl border border-surface-container-high hover:border-outline transition-all">
+<div>
+<div class="flex items-center gap-space-sm mb-space-sm">
+<span class="material-symbols-outlined text-tertiary text-[28px]">terminal</span>
+<h3 class="font-headline-md text-title-sm text-on-surface font-bold">Web - SaaS &amp; Headless API</h3>
+</div>
+<div class="font-label-md text-label-md text-on-surface-variant font-semibold mb-space-md">Cloud API • Playground</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              High-throughput HTTP &amp; gRPC microservice for streaming token counting inside your backend inference pipelines.
+            </p>
+<ul class="flex flex-col gap-space-sm mb-space-lg font-body-md text-body-md text-on-surface">
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span> 50,000 req/sec Rust engine</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span> Cloudflare Edge worker deployment</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span> Live web playground tester</li>
+<li class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary text-[18px]">check_circle</span> Real-time webhook spend alerts</li>
+</ul>
+</div>
+<button class="w-full py-space-md rounded-xl bg-surface-container-high border border-outline hover:border-tertiary text-on-surface font-headline-md text-title-sm font-semibold transition-all flex items-center justify-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">integration_instructions</span> Explore API Docs
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: BLOG & RESEARCH PREVIEWS (5 POSTS ASYMMETRIC) -->
+<section class="w-full py-space-xl bg-surface" id="blog">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">ENGINEERING DISPATCHES</span>
+<h2 class="font-headline-lg text-headline-lg mt-space-xs text-on-surface">Research &amp; Optimization Insights</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Deep dives into byte-pair encoding, vocabulary shifts, and cost reduction strategies.</p>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary hover:underline" href="#">
+          View All Papers <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+<!-- Top Row: 2 Large Featured Posts -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg mb-space-lg">
+<!-- Post 1 -->
+<article class="group bg-surface-container rounded-3xl border border-surface-container-high p-space-lg hover:border-primary-container/50 hover:shadow-[0_12px_32px_rgba(0,217,255,0.1)] transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-space-sm mb-space-sm">
+<span class="px-space-sm py-0.5 rounded bg-primary/10 border border-primary/20 font-label-sm text-label-sm text-primary uppercase font-semibold">Deep Dive • 8 min read</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">May 2025</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors mb-space-sm">
+              Understanding Modern Tokenizers: From BPE to WordPiece
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-md">
+              Explores why token counts differ drastically between OpenAI o200k_base and LLaMA 3 vocabularies, analyzing byte coverage, regex pre-tokenization edge cases, and cross-lingual compression efficiency.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm border-t border-surface-container-high">
+<span class="font-label-sm text-label-sm text-on-surface-variant">By Dr. Elena Rostova • Token Systems</span>
+<span class="font-label-md text-label-md text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform">Read Article →</span>
+</div>
+</article>
+<!-- Post 2 -->
+<article class="group bg-surface-container rounded-3xl border border-surface-container-high p-space-lg hover:border-primary-container/50 hover:shadow-[0_12px_32px_rgba(0,217,255,0.1)] transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-space-sm mb-space-sm">
+<span class="px-space-sm py-0.5 rounded bg-secondary/10 border border-secondary/20 font-label-sm text-label-sm text-secondary uppercase font-semibold">Engineering • 12 min read</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">April 2025</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface group-hover:text-secondary transition-colors mb-space-sm">
+              The Comprehensive Prompt Compression Guide
+            </h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-space-md">
+              How deterministic token pruning algorithms maintain model reasoning capabilities while cutting context overhead by 40%. Includes benchmark comparisons across GSM8K and HumanEval benchmarks.
+            </p>
+</div>
+<div class="flex items-center justify-between pt-space-sm border-t border-surface-container-high">
+<span class="font-label-sm text-label-sm text-on-surface-variant">By Marcus Vance • Prompt Architecture</span>
+<span class="font-label-md text-label-md text-secondary flex items-center gap-1 group-hover:translate-x-1 transition-transform">Read Article →</span>
+</div>
+</article>
+</div>
+<!-- Bottom Row: 3 Standard Posts -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Post 3 -->
+<article class="group bg-surface-container rounded-2xl border border-surface-container-high p-space-md hover:border-outline transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Benchmarks • 15 min</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Apr 2025</span>
+</div>
+<h4 class="font-headline-md text-title-sm text-on-surface group-hover:text-primary transition-colors mb-space-xs">
+              2025 Vocabulary Comparison: GPT-4o vs Claude 3.5 vs Gemini 1.5
+            </h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-sm line-clamp-3">
+              Empirical analysis of token efficiency for codebases, multilingual dialogue, and deep reasoning traces.
+            </p>
+</div>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform pt-space-xs">Read Article →</span>
+</article>
+<!-- Post 4 -->
+<article class="group bg-surface-container rounded-2xl border border-surface-container-high p-space-md hover:border-outline transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">FinOps • 6 min</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mar 2025</span>
+</div>
+<h4 class="font-headline-md text-title-sm text-on-surface group-hover:text-primary transition-colors mb-space-xs">
+              LLM Budget Management: Engineering Guardrails at Scale
+            </h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-sm line-clamp-3">
+              Implementing deterministic cost barriers, automated context rolling, and prompt optimization pipelines across teams.
+            </p>
+</div>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform pt-space-xs">Read Article →</span>
+</article>
+<!-- Post 5 -->
+<article class="group bg-surface-container rounded-2xl border border-surface-container-high p-space-md hover:border-outline transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between gap-space-xs mb-space-xs">
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Architecture • 10 min</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Mar 2025</span>
+</div>
+<h4 class="font-headline-md text-title-sm text-on-surface group-hover:text-primary transition-colors mb-space-xs">
+              Advanced Token Tactics: Prefix Caching &amp; Context Packing
+            </h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-sm line-clamp-3">
+              Maximizing provider KV cache hits using whitespace normalization and deterministic boundary alignments.
+            </p>
+</div>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1 group-hover:translate-x-1 transition-transform pt-space-xs">Read Article →</span>
+</article>
+</div>
+</div>
+</section>
+<!-- SECTION 6: FINAL CONVERSION BANNER -->
+<section class="w-full py-space-xl border-t border-surface-container-high bg-surface-container-lowest relative overflow-hidden">
+<div class="max-w-5xl mx-auto px-gutter relative z-10 text-center">
+<div class="p-space-xl rounded-3xl bg-gradient-to-b from-surface-container to-surface-container-low border border-primary-container/40 shadow-[0_0_50px_rgba(0,217,255,0.15)] relative overflow-hidden">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-container/20 blur-[100px] pointer-events-none rounded-full"></div>
+<span class="inline-block px-space-md py-1 rounded-full bg-primary/10 border border-primary/20 font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider mb-space-md">
+          ZERO LATENCY • ZERO PACKETS
+        </span>
+<h2 class="font-display text-display max-w-2xl mx-auto tracking-tight mb-space-md text-on-surface">
+          Start Slashing Your LLM Bills Today.
+        </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto mb-space-lg">
+          Join over 45,000 developers saving millions of tokens every single day. Zero configuration or API keys required.
+        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-md mb-space-lg">
+<a class="w-full sm:w-auto px-space-xl py-space-md rounded-xl bg-primary-container text-on-primary-container font-headline-md text-title-sm font-semibold flex items-center justify-center gap-space-sm shadow-[0_0_24px_rgba(0,217,255,0.5)] hover:bg-white transition-all" href="#installation">
+<span class="material-symbols-outlined text-[22px]">download</span>
+<span>Install on Chrome</span>
+</a>
+<a class="w-full sm:w-auto px-space-lg py-space-md rounded-xl bg-surface-container-high border border-outline hover:border-primary-container text-on-surface font-headline-md text-title-sm font-semibold flex items-center justify-center gap-space-sm transition-all" href="https://github.com" rel="noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[22px]">code</span>
+<span>View Source on GitHub</span>
+</a>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-space-md font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1">🔒 100% Local &amp; Private</span>
+<span class="text-surface-container-high">•</span>
+<span class="flex items-center gap-1">⚡ Instant In-Browser Activation</span>
+<span class="text-surface-container-high">•</span>
+<span class="flex items-center gap-1">✨ Free &amp; Open Source</span>
+</div>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-gutter"><div class="grid grid-cols-2 md:grid-cols-4 gap-space-xl mb-space-xl"><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Product</span><ul class="flex flex-col gap-space-xs"><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Extension</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Web App</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Enterprise</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Changelog</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Roadmap</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Documentation</span><ul class="flex flex-col gap-space-xs"><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Quickstart</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">BPE Tokenizers</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">API Reference</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Privacy &amp; Security</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Research</span><ul class="flex flex-col gap-space-xs"><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Token Dynamics</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Compression</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Model Index</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Benchmarks</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Company</span><ul class="flex flex-col gap-space-xs"><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">About</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">GitHub</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Discord</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Twitter / X</a></li><li class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"><a href="#">Security Audit</a></li></ul></div></div><div class="pt-space-lg border-t border-surface-container-high flex flex-col md:flex-row items-center justify-between gap-space-md font-body-md text-body-md text-on-surface-variant"><div class="flex items-center gap-space-sm text-center md:text-left"><p>© 2025 TokenOptim Inc. Zero telemetry, 100% client-side privacy guarantee.</p></div><div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-space-sm py-space-xs rounded border border-surface-container-high"><span class="inline-block w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]"></span><span class="uppercase tracking-wider font-semibold text-on-surface">All Systems Operational</span></div></div></div></footer></body></html>
